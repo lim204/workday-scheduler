@@ -1,12 +1,8 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(document).ready(function(){
-        console.log("it's ready!");
 
-       //diff. between $(window.onload())
 
-});
 
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
@@ -15,6 +11,7 @@ $(function () {
   // function? How can DOM traversal be used to get the "hour-x" id of the
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
+      
   //
   // TODO: Add code to apply the past, present, or future class to each time
   // block by comparing the id to the current hour. HINTS: How can the id
@@ -26,6 +23,14 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
+  
+    
+  
   // TODO: Add code to display the current date in the header of the page.
+  var currentTime = dayjs().hours()
+    console.log(currentTime);
+    var currentTime= dayjs().format('MMM DD,YYYY [at] hh:mm:ss a');
 
 });
+
+
