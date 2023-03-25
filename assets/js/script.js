@@ -26,11 +26,12 @@ $(function () {
   
     
   
-  // TODO: Add code to display the current date in the header of the page.
-  var currentTime = dayjs().hours()
-    console.log(currentTime);
-    var currentTime= dayjs().format('MMM DD,YYYY [at] hh:mm:ss a');
-
+  // TODO: Add code to display the current date in the header of the page. still need to add number suffixes st,nd,th rd Do 
+  var today = dayjs();
+  $('#currentDay').text(today.format('dddd,MMMM D YYYY'));
+ 
 });
+
+
 
 
