@@ -29,7 +29,7 @@ $(function () {
     var blockId = parseInt(this.id.split('-')[1]);
      //console.log(blockId);
 
-    if (blockId <currentTime){
+    if (blockId < currentTime){
       $(this).addClass('past');
     } else if (blockId === currentTime){
       $(this).addClass('present');
