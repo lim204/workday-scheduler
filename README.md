@@ -7,6 +7,7 @@ The main purple of thi project is to create a simple calendar application that a
 1) When the user opens the planner, the current day is displayed at the top of the calendar.
 2) When the user scrolls down, the time blocks show standard business hours.
 3) Each time block is color-coded to indicate whether it is in the past, present, or future.
+
      * ![#d3d3d3](https://via.placeholder.com/15/d3d3d3/000000?text=+) `Past` 
      * ![#ff6961](https://via.placeholder.com/15/ff6961/000000?text=+) `Present`
      * ![#77dd77](https://via.placeholder.com/15/77dd77/000000?text=+) `Future`
