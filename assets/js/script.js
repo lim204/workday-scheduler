@@ -12,26 +12,26 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
 
-//  textInput ();
-//  function textInput(){
-//        $('.saveBtn').on('click',function(){
-//          var time = $(this).parent().attr('id');
-//          var tasks = $(this).siblings('.description').val();
-//          localStorage.setItem(time,tasks);
-//        });
-// }
+  textInput ();
+  function textInput(){
+        $('.saveBtn').on('click',function(){
+          var time = $(this).parent().attr('id');
+          var tasks = $(this).siblings('.description').val();
+          localStorage.setItem(time,tasks);
+       });
+}
 
- var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-  if (tasks.length){
-    $('.description').text(tasks);
- }
-   $('.saveBtn').on('click', function(){
-    var time = $(this).parent().attr('id');
-    var userInput = $(this).siblings('.description').val();
-    tasks.push(userInput);
-    localStorage.setItem(time,JSON.stringify(userInput));
-    window.location.reload();
-});
+//  var tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+//   if (tasks.length){
+//     $('.description').text(tasks);
+//  }
+//    $('.saveBtn').on('click', function(){
+//     var time = $(this).parent().attr('id');
+//     var userInput = $(this).siblings('.description').val();
+//     tasks.push(userInput);
+//     localStorage.setItem(time,JSON.stringify(userInput));
+//     window.location.reload();
+// });
 
 
 
@@ -56,18 +56,21 @@ $(function () {
       $(this).addClass('past');
     } else if (blockId === currentTime){
       $(this).addClass('present');
+      $(this).removeClass('past');
     } else {
       $(this).addClass('future');
+      $(this).removeClass('past');
+      $(this).removeClass('present');
     }
   });
    
   // TODO: Add code to get any user input that was saved in localStorage and set
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
-  $('.time-block').each(function(){
-    var key = $(this).attr('id');
-    var value = localStorage.getItem(key);
-    $(this).children('.description').val(value);
+   $('.time-block').each(function(){
+     var key = $(this).attr('id');
+     var value = localStorage.getItem(key);
+     $(this).children('.description').val(value);
     
   })
 
