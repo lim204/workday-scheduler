@@ -18,7 +18,7 @@ The main purple of thi project is to create a simple calendar application that a
  
 
 ## Screenshot
-
+![screencapwowrkdayscheduler](https://user-images.githubusercontent.com/125234173/227833976-8ad5dd77-39ca-48fc-86d5-f0d662d9077c.png)
 
 ## Link to Work Day Scheculer
-[deployed link] 
+[deployed link] ( )
