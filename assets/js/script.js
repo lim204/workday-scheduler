@@ -12,6 +12,7 @@
 //        localStorage.setItem(time,JSON.stringify(userInput));
 //        window.location.reload();
 //  });
+ 
 
 
 $(function () {
@@ -25,8 +26,9 @@ $(function () {
   textInput();
   function textInput() {
     $('.saveBtn').on('click', function () {
-      var time = $(this).parent().attr('id');
-      var plan = $(this).siblings('.description').val();
+      var $el= $(this)
+      var time = $el.parent().attr('id');
+      var plan = $el.siblings('.description').val();
       localStorage.setItem(time, plan);
     });
   }
@@ -46,17 +48,17 @@ $(function () {
     //console.log(this.id);
     var blockId = parseInt(this.id.split('-')[1]);
     //console.log(blockId);
-
+    var $el= $(this)
     if (blockId < currentTime) {
-      $(this).addClass('past');
+      $el.addClass('past');
     } else if (blockId === currentTime) {
-      $(this).removeClass('future')
-      $(this).removeClass('past');
-      $(this).addClass('present');
+      $el.removeClass('future')
+      $el.removeClass('past');
+      $el.addClass('present');
     } else {
-      $(this).removeClass('present');
-      $(this).removeClass('past');
-      $(this).addClass('future');
+      $el.removeClass('present');
+      $el.removeClass('past');
+      $el.addClass('future');
     }
   });
 
@@ -64,15 +66,17 @@ $(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this? This will get user input of the textarea element from local storage
   $('.time-block').each(function () {
-    var time = $(this).attr('id');
+    var $el = $(this)
+    var time = $el.attr('id');
     var plan = localStorage.getItem(time);
-    $(this).children('.description').val(plan);
+    $el.children('.description').val(plan);
 
   })
 
   // TODO: Add code to display the current date in the header of the page. -->still need to add number suffixes st,nd,th rd Do 
   var today = dayjs();
   $('#currentDay').text(today.format('dddd,MMMM D YYYY'));
+  
 });
 
 
